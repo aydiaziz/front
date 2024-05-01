@@ -1,0 +1,52 @@
+
+<!-- bootstrap css -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="/assets/images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="/assets/css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+<app-header-front></app-header-front>
+<router-outlet></router-outlet>
+<app-footer-front></app-footer-front>
+<script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/popper.min.js"></script>
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+      <script src="/assets/js/jquery-3.0.0.min.js"></script>
+      <script src="/assets/js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/assets/js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="/assets/js/owl.carousel.js"></script>
+      <script>
+         $(document).ready(function() {
+           var owl = $('.owl-carousel');
+           owl.owlCarousel({
+             margin: 10,
+             nav: true,
+             loop: true,
+             responsive: {
+               0: {
+                 items: 1
+               },
+               600: {
+                 items: 2
+               },
+               1000: {
+                 items: 3
+               }
+             }
+           })
+         })
+      </script>
