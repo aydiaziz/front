@@ -1,13 +1,9 @@
-<form [formGroup]="postForm">
-    <div>
-      <label>Content:</label>
-      <textarea formControlName="content" required></textarea>
-    </div>
-    
-    <div>
-      <label>Image:</label>
-      <input type="file" formControlName="img" required>
-    </div>
-  </form>
-  <button (click)="addPost()">Ajouter un post</button>
-  
+<form [formGroup]="postForm" (ngSubmit)="addPost()">
+  <label for="content">Content:</label>
+  <textarea formControlName="content"></textarea>
+
+  <label for="image">Image:</label>
+  <input type="file" id="image" name="image" accept="image/*" (change)="onFileSelected($event)">
+
+  <button type="submit">Submit</button>
+</form>

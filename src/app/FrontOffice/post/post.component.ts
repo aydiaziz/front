@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/Model/post';
 import { PostService } from 'src/app/Services/post.service';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CreatcommentComponent } from '../creatcomment/creatcomment.component';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -10,7 +12,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 export class PostComponent implements OnInit {
   posts:Post[]=[];
   postForm!: FormGroup;
-  constructor(private postService:PostService,private formBuilder: FormBuilder){
+  constructor(private postService:PostService,private formBuilder: FormBuilder,private router: Router){
     this.postForm = this.formBuilder.group({
       content: ['',Validators.required],
       img:  ['',Validators.required],
@@ -36,7 +38,9 @@ export class PostComponent implements OnInit {
     alert("post published ! ");
   }
  }
-  
+ goToCommentForm(postId: number): void {
+  this.router.navigate(['/creat-comment', postId]); // Rediriger vers le composant CommentFormComponent avec l'ID du post
+}
 
 
 }

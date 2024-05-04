@@ -1,10 +1,12 @@
+import { commentaire } from "./commentaire";
+
 export class Post {
     pubid: number;
     likes: number;
     content: string;
     publication_date: Date;
     img: string;
-    comments: Comment[];
+    comments: commentaire[];
   
     constructor(
       pubid: number,
@@ -12,7 +14,7 @@ export class Post {
       content: string,
       publication_date: Date,
       img: string,
-      comments: Comment[]
+      comments: commentaire[]
     ) {
       this.pubid = pubid;
       this.likes = likes;
