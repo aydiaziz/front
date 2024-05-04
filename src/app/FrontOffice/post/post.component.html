@@ -1,0 +1,23 @@
+<div *ngFor="let post of posts">
+    <div class="post">
+      <div class="post-header">
+        <img src="{{ post.img }}" alt="Image du post">
+        <h2>Publié le {{ post.publication_date | date: 'dd/MM/yyyy' }}</h2>
+      </div>
+      <div class="post-content">
+        <p>{{ post.content }}</p>
+      </div>
+      <!--<div class="post-actions">
+        <button (click)="likePost()">Likes : {{ post.likes }}</button>
+        <button (click)="commentPost()">Commentaires : {{ post.comments.length }}</button>
+      </div>-->
+      <div class="post-comments">
+        <h3>Commentaires :</h3>
+        <ul>
+          <li *ngFor="let comment of post.comments">
+            {{ comment }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
