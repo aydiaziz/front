@@ -1,0 +1,28 @@
+<form [formGroup]="postForm" (ngSubmit)="addPost(postForm)">
+
+  <div class="form-group">
+    <label for="content">Content:</label>
+    <textarea formControlName="content" id="content" rows="5" class="form-control"></textarea>
+    <div *ngIf="postForm.get('content')?.hasError('required')" class="alert alert-danger">
+      Content is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image:</label>
+    <input type="file" (change)="onFileSelected($event)" id="image" formControlName="img" class="form-control-file">
+    <div *ngIf="uploadError" class="alert alert-danger">
+      Error uploading image: {{ uploadError }}
+    </div>
+    <div *ngIf="selectedFile" class="mt-2">
+      Selected Image: {{ selectedFile.name }}
+    </div>
+  </div>
+    <div class="mt-2 " *ngFor="let file of post.productimage;">
+        <div style="position: relative">
+            
+            <img [src]="file.url" width="100px" height="100px">
+        </div>
+    </div>
+  <button type="submit" class="btn btn-primary">Create Post</button>
+</form>

@@ -1,10 +1,15 @@
+import { commentaire } from "./commentaire";
+import { FileHandle } from "./file-handle";
+
 export class Post {
     pubid: number;
     likes: number;
     content: string;
     publication_date: Date;
     img: string;
-    comments: Comment[];
+    comments: commentaire[];
+    productimage: FileHandle[]
+    
   
     constructor(
       pubid: number,
@@ -12,7 +17,8 @@ export class Post {
       content: string,
       publication_date: Date,
       img: string,
-      comments: Comment[]
+      comments: commentaire[],
+      productimage: FileHandle[]
     ) {
       this.pubid = pubid;
       this.likes = likes;
@@ -20,6 +26,7 @@ export class Post {
       this.publication_date = publication_date;
       this.img = img;
       this.comments = comments;
+      this.productimage= productimage;
     }
   }
   
