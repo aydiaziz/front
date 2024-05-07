@@ -12,6 +12,11 @@ import { CommentComponent } from './FrontOffice/comment/comment.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreatpostComponent } from './FrontOffice/creatpost/creatpost.component';
 import { CreatcommentComponent } from './FrontOffice/creatcomment/creatcomment.component';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import{MatDialogModule} from '@angular/material/dialog';
+import { ShowimagesComponent } from './FrontOffice/showimages/showimages.component'
+import {MatGridListModule} from '@angular/material/grid-list'
+import{MatDialog} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -23,13 +28,19 @@ import { CreatcommentComponent } from './FrontOffice/creatcomment/creatcomment.c
     PostComponent,
     CommentComponent,
     CreatpostComponent,
-    CreatcommentComponent
+    CreatcommentComponent,
+    ShowimagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatGridListModule,
+    MatDialog
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

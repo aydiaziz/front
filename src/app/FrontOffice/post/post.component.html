@@ -1,16 +1,15 @@
-<div *ngFor="let post of posts">
-    <div class="post">
-      <div class="post-header">
-        <img src="{{ post.img }}" alt="Image du post">
-        <h2>Publié le {{ post.publication_date }}</h2>
-      </div>
-      <div class="post-content">
-        <p>{{ post.content }}</p>
-      </div>
-      <!--<div class="post-actions">
-        <button (click)="likePost()">Likes : {{ post.likes }}</button>
-        <button (click)="commentPost()">Commentaires : {{ post.comments.length }}</button>
-      </div>-->
-      <app-creatcomment [post]="post"></app-creatcomment>
-    </div>
-  </div>
+<h2>All Posts</h2>
+<ul *ngIf="posts.length > 0">
+  <li *ngFor="let post of posts">
+    <h4>Post ID: {{ post.pubid }}</h4>
+    <p>Likes: {{ post.likes }}</p>
+    <p>Content: {{ post.content }}</p>
+    <p>Publication Date: {{ post.publication_date }}</p>
+    
+    <!--<div class="post-actions">
+      <button (click)="likePost()">Likes : {{ post.likes }}</button>
+      <button (click)="commentPost()">Commentaires : {{ post.comments.length }}</button>
+    </div>-->
+    <app-creatcomment [post]="post"></app-creatcomment>
+  </li>
+</ul>

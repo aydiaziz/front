@@ -12,7 +12,7 @@ import { PostService } from 'src/app/Services/post.service';
 })
 export class CreatcommentComponent  implements OnInit{
   @Input() post!: Post;
-  newComment: commentaire= new commentaire(0, '', new Date(), new Post(0, 0, '', new Date(), '', []));
+  newComment: commentaire= new commentaire(0, '', new Date(), new Post(0, 0, '', new Date(), '', [],[]));
 
   constructor(
     private route: ActivatedRoute,
